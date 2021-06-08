@@ -8,6 +8,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     textAlign: "center",
+    maxWidth: "80%",
+    margin: "auto",
   },
   appbar: {
     background: "rgb(236, 183, 236)",

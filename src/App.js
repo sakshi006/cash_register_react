@@ -1,5 +1,5 @@
 import "./App.css";
-import Form from "./Components/Form";
+import FormControls from "./Components/FormControls";
 import Navbar from "./Components/Navbar";
 
 function App() {
@@ -7,9 +7,8 @@ function App() {
     <div className="row">
       <Navbar />
       <div>
-        <Form />
+        <FormControls />
       </div>
-      {/* <div className="col-md-7">List</div> */}
     </div>
   );
 }

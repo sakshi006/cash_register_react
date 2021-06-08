@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -35,13 +34,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function Form({ addOrEdit }) {
   const classes = useStyles();
 
   const [values, setValues] = useState(initialValues);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     const { name, value } = e.target;
     setValues({
       ...values,
@@ -51,8 +50,18 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
-    // setValues(e.target.value);
+    if (
+      values.Date === "" ||
+      values.Time === "" ||
+      values.Remarks === "" ||
+      values.Amount === "" ||
+      values.Transaction === ""
+    )
+      setError("Enter all values");
+    else {
+      addOrEdit(values);
+      setError("");
+    }
   };
 
   return (
@@ -113,12 +122,14 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                required
                 size="small"
                 variant="outlined"
                 label="Amount"
                 type="number"
                 name="Amount"
                 fullWidth
+                InputProps={{ inputProps: { min: 0 } }}
                 value={values.Amount}
                 onChange={handleChange}
               />
@@ -134,6 +145,7 @@ export default function SignUp() {
             Save
           </Button>
         </form>
+        <div>{error}</div>
       </div>
     </Container>
   );
