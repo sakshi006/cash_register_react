@@ -14,17 +14,16 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     margin: "auto",
     maxWidth: "19rem",
-    height: "12vh",
+    height: "10vh",
     textAlign: "left",
     border: "1px solid grey",
     marginTop: "0.5rem",
-    // backgroundColor: "red",
+    borderRadius: "0.5rem",
   },
 }));
 
 export default function OutputGrid({ cashObject, deleteHandler }) {
   const classes = useStyles();
-  //   && cashObject[id].Transaction === "+"
   return (
     <div className={classes.root}>
       {Object.keys(cashObject).map((id) => {
@@ -42,13 +41,13 @@ export default function OutputGrid({ cashObject, deleteHandler }) {
                     <Typography variant="body2">
                       {cashObject[id].Date} ({cashObject[id].Time})
                     </Typography>
-                    <Typography variant="body1">
+                    <Typography variant="subtitle3">
                       {cashObject[id].Remarks.toUpperCase()}
                     </Typography>
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <Typography variant="h4">
+                  <Typography variant="h5">
                     {}
                     {cashObject[id].Transaction}
                     {cashObject[id].Amount}

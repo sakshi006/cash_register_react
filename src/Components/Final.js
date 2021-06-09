@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     margin: "auto",
     maxWidth: "19rem",
-    height: "12vh",
+    height: "10vh",
     textAlign: "left",
-    border: "1px solid grey",
+    border: "2px solid grey",
     marginTop: "0.2rem",
   },
 }));
@@ -42,7 +42,7 @@ const Final = ({ cashObject }) => {
                 {array.length > 0 ? array[array.length - 1].Date : 0} (
                 {array.length > 0 ? array[array.length - 1].Time : 0})
               </Typography>
-              <Typography variant="subtitle1">FINAL</Typography>
+              <Typography variant="h6">FINAL</Typography>
             </Grid>
           </Grid>
           <Grid item>

@@ -6,9 +6,6 @@ import Final from "./Final";
 
 const FormControls = () => {
   const [cashObject, setCashObject] = useState({});
-  // const [currId, setCurrId] = useState("");
-
-  // console.log(currId);
 
   useEffect(() => {
     firebaseDb.child("cash").on("value", (snapshot) => {
