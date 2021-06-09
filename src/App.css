@@ -1,4 +1,13 @@
 * {
   padding: 0rem;
   margin: 0rem;
+  font-weight: bold;
+}
+
+.grid {
+  color: green;
+}
+
+.gridred {
+  color: red;
 }

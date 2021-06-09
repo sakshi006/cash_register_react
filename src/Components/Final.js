@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
 const Final = ({ cashObject }) => {
   const classes = useStyles();
 
-  const [sums, setSum] = useState(true);
-
   let array = Object.values(cashObject);
   let sum = 0;
   if (array != null) {
@@ -34,8 +32,6 @@ const Final = ({ cashObject }) => {
       }
     }
   }
-  // if (sum > 0) setSum(true);
-  // else setSum(false);
   return (
     <div>
       <Grid className={classes.grid} container spacing={2}>
@@ -43,7 +39,7 @@ const Final = ({ cashObject }) => {
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography variant="body2">
-                {array.length > 1 ? array[array.length - 1].Date : 0}(
+                {array.length > 1 ? array[array.length - 1].Date : 0} (
                 {array.length > 1 ? array[array.length - 1].Time : 0})
               </Typography>
               <Typography variant="subtitle1">FINAL</Typography>
@@ -51,12 +47,11 @@ const Final = ({ cashObject }) => {
           </Grid>
           <Grid item>
             <Typography variant="h4">
-              {/* {sums ? (
-                <div style={{ color: "green" }}>sum</div>
+              {sum >= 0 ? (
+                <div style={{ color: "green" }}>{sum}</div>
               ) : (
-                <div style={{ color: "red" }}>sum</div>
-              )} */}
-              {sum}
+                <div style={{ color: "red" }}>{sum}</div>
+              )}
             </Typography>
           </Grid>
         </Grid>

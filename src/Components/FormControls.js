@@ -6,7 +6,9 @@ import Final from "./Final";
 
 const FormControls = () => {
   const [cashObject, setCashObject] = useState({});
-  const [currId, setCurrId] = useState("");
+  // const [currId, setCurrId] = useState("");
+
+  // console.log(currId);
 
   useEffect(() => {
     firebaseDb.child("cash").on("value", (snapshot) => {
@@ -26,7 +28,7 @@ const FormControls = () => {
     if (window.confirm("Are you sure to delete this record?")) {
       firebaseDb.child(`cash/${key}`).remove((err) => {
         if (err) console.log(err);
-        else setCurrId("");
+        // else setCurrId("");
       });
     }
   };
