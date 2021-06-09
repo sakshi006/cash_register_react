@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+##Project Description
+Cash register made using React, Material-UI,Firebase realtime database and hosted on firebase.
+You can log your expenses with the date, time, and remarks and also delete them. It shows the final value on the top.
+
+It also has the functionality of deleting an expense if it's irrelevant.
+If the entered expense is + (positive), it is displayed with green color whereas a - (negative) expense is displayed in red.
+
+The final amount changes accordingly.
+Do have a look. :)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
