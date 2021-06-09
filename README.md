@@ -1,4 +1,5 @@
-##Project Description
+## Project Description
+
 Cash register made using React, Material-UI,Firebase realtime database and hosted on firebase.
 You can log your expenses with the date, time, and remarks and also delete them. It shows the final value on the top.
 
