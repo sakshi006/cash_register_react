@@ -72,6 +72,7 @@ export default function Form({ addOrEdit }) {
             <Grid item xs={6} sm={6}>
               <TextField
                 size="small"
+                label="Date"
                 required
                 fullWidth
                 type="date"
@@ -81,19 +82,7 @@ export default function Form({ addOrEdit }) {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={2} sm={2}>
-              <Select
-                placeholder="Transaction type"
-                required
-                fullWidth
-                name="Transaction"
-                value={values.Transaction}
-                onChange={handleChange}
-              >
-                <MenuItem value={"+"}>+</MenuItem>
-                <MenuItem value={"-"}>-</MenuItem>
-              </Select>
-            </Grid>
+            <Grid item xs={2} sm={2}></Grid>
             <Grid item xs={4} sm={4}>
               <TextField
                 size="small"
@@ -120,7 +109,20 @@ export default function Form({ addOrEdit }) {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2} sm={2}>
+              <Select
+                placeholder="Transaction type"
+                required
+                fullWidth
+                name="Transaction"
+                value={values.Transaction}
+                onChange={handleChange}
+              >
+                <MenuItem value={"+"}>+</MenuItem>
+                <MenuItem value={"-"}>-</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 required
                 size="small"
