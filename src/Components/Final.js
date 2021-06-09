@@ -39,8 +39,8 @@ const Final = ({ cashObject }) => {
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography variant="body2">
-                {array.length > 1 ? array[array.length - 1].Date : 0} (
-                {array.length > 1 ? array[array.length - 1].Time : 0})
+                {array.length > 0 ? array[array.length - 1].Date : 0} (
+                {array.length > 0 ? array[array.length - 1].Time : 0})
               </Typography>
               <Typography variant="subtitle1">FINAL</Typography>
             </Grid>
